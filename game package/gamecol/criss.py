@@ -1,6 +1,13 @@
 ##RKB developer..... everything is easy you only need the perfect algorithm and the imagination
 from random import randint
 import os
+import platform
+
+if platform.system()=='Linux':
+   cs='clear'
+else:
+    cs='cls'
+
 board=list(' '*9)
 def reset():
     global board
@@ -117,11 +124,11 @@ def boarddesign(i,hm,pc):
 def game(i,hm,pc):
       raw_input("\nThis a tick tac toe game that is to illustrate the very basics of A.I in algorithm\n\n")
       while checkwin()==0:
-             os.system('cls')
+             os.system(cs)
              player=boarddesign(i,hm,pc) ## the game is played here this while loop holds it. the later is just results
              i=i^1   
       
-      os.system('cls')
+      os.system(cs)
       print board[1-1]+"  | "+board[2-1]+" | "+board[3-1]
       print "---|---|---"
       print board[4-1]+"  | "+board[5-1]+" | "+board[6-1]
@@ -140,7 +147,7 @@ def game(i,hm,pc):
 def player():	   
     n='y'
     while n=='y':
-	    os.system("cls")
+	    os.system(cs)
             print str(1)+"  | "+str(2)+" | "+str(3)
             print "---|---|---"
             print str(4)+"  | "+str(5)+" | "+str(6)

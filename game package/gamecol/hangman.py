@@ -1,12 +1,18 @@
 from random import randint   #this is for the random number genrator
 import os  #this is for clearing the screen
+import platform
+
+if platform.system()=='Linux':
+    cs='clear'
+else:
+    cs='cls'
 
 class module:
 	def menu(self):    #the default menu
 	    print " HELLO WELCOME TO THE hangman "
 	    a=raw_input("\n\n\tDo you wanna continue:")
 	    if a=='y':
-	       os.system('cls')
+	       os.system(cs)
 	       a=module()
 	       a.game()
                raw_input()
@@ -30,7 +36,7 @@ class module:
 	    raw_input("Press any key to continue")
 	    
 	    while not h==("?"*len(h)):  
-		   os.system('cls')
+		   os.system(cs)
 		   print "\t\nNow you have a country name make the gusses right!! game on\n\n"
 		   i=0
 		   while i<=(len(default)-1):
