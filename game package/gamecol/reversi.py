@@ -3,6 +3,12 @@
 
 import os
 from random import shuffle
+import platform
+
+if platform.system()=='Linux':
+    cs='clear'
+else:
+     cs='cls'
 
 
 def turnboard(board):
@@ -183,7 +189,7 @@ def aiinput(board,pc,hm):
 
  
 def playwithcomp():
-        os.system('cls')
+        os.system(cs)
         print "WELCOME TO THE REVERSI GAME \n\n BE WARNED THE GAME WILL DEFEAT YOU !!!!!"
         hm=pc=' ' 
         itr=0
@@ -200,7 +206,7 @@ def playwithcomp():
         raw_input("\nPRESS ENTER TO CONTINUE")
 	while True:
 		itr=itr+1
-		os.system('cls')
+		os.system(cs)
 		displayboard(board)
 		if itr%2==0:
                         print "You are ",hm," and computer is ",pc
